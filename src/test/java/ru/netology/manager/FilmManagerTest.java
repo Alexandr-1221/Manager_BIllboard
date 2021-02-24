@@ -6,6 +6,7 @@ import ru.netology.domain.PurchaseFilm;
 import ru.netology.manager.FilmManager;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Data
 
@@ -21,6 +22,12 @@ public class FilmManagerTest {
     private PurchaseFilm ninth = new PurchaseFilm(1, 1, "ninth", "comedy", true);
     private PurchaseFilm tenth = new PurchaseFilm(1, 1, "tenth", "comedy", true);
     private PurchaseFilm eleventh = new PurchaseFilm(1, 1, "eleventh", "comedy", true);
+
+    @Test
+    public void validateFilmManager(){
+        FilmManager manager = new FilmManager();
+        assertEquals(10, manager.getMaxLength());
+    }
 
     @Test
     public void shouldAddFilm() {
